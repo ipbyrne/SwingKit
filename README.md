@@ -62,3 +62,19 @@ Now that we have esbalished our null hypothesis, we can perform our Chi-Squared 
 
 In other words, there is a stastiscal signifcance between which swings lead to which.
 
+EURUSD 4HR Swing to Swing Distributions Counting Js at Ts Chi-Squared Test:
+
+![alt text](https://github.com/ipbyrne/SwingKit/blob/master/JasT-Chi-Squared.PNG?raw=true "J Swings as T Swings")
+
+EURUSD 4HR Swing to Swing Distributions Counting Js at Rs Chi-Squared Test:
+
+![alt text](https://github.com/ipbyrne/SwingKit/blob/master/JasR-Chi-Squared.PNG?raw=true "J Swings as R Swings")
+
+### Interpreting The Results
+Depending on how you classify the Reject Swings (J), the results of our Chi-Squared Test vary quite drastically.
+
+In both cases, the resulting swings after a Trend Swing (T), are considered to be not random at all.
+
+If you classify the Reject Swings (J) as Trend Swings (T), the resulting swings after a Retrace Swing (R), are considered to be not random at all.
+
+If you classify the Reject Swings (J) as Retrace Swings (R), the resulting swings after a Retrace Swing (R), are considered to be random.
