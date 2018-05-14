@@ -81,6 +81,6 @@ Depending on how you classify the Reject Swings (J), the results of our Chi-Squa
 
 As previously stated, I personally think it makes more sense to clasiffy the Reject Swings (J) as Trend Swings (T) because the new swing has retraced past the initial length of the previous swing, which will create a new high (or low), which by definition, is a continuated of a trend, or the start of a new one.
 
-When accepting the premise that Reject Swings (J) should be classified as Trend Swings (T), we are able to reject the null hypothesis wit more than 99% confidence.
+When accepting the premise that Reject Swings (J) should be classified as Trend Swings (T), we are able to reject the null hypothesis with more than 99% confidence.
 
 **As a result, the relationship between swings and which swings lead to which, are NOT independent.**
