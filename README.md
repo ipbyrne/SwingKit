@@ -73,8 +73,8 @@ EURUSD 4HR Swing to Swing Distributions Counting Js at Rs Chi-Squared Test:
 ### Interpreting The Results
 Depending on how you classify the Reject Swings (J), the results of our Chi-Squared Test vary quite drastically.
 
-In both cases, the resulting swings after a Trend Swing (T), are considered to be not random at all.
+**In both cases, the resulting swings after a Trend Swing (T), are considered to be not random at all.**
 
-If you classify the Reject Swings (J) as Trend Swings (T), the resulting swings after a Retrace Swing (R), are considered to be not random at all.
+**If you classify the Reject Swings (J) as Trend Swings (T), the resulting swings after a Retrace Swing (R), are considered to be not random at all.**
 
-If you classify the Reject Swings (J) as Retrace Swings (R), the resulting swings after a Retrace Swing (R), are considered to be random.
+**If you classify the Reject Swings (J) as Retrace Swings (R), the resulting swings after a Retrace Swing (R), are considered to be random.**
