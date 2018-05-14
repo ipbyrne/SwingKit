@@ -44,7 +44,7 @@ EURUSD 4HR Swing to Swing Distributions Counting Js at Rs:
 
 ![alt text](https://github.com/ipbyrne/SwingKit/blob/master/JasR.PNG?raw=true "J Swings as R Swings")
 
-You can see how the probabilities slightly shift depending on how you classify the Reject (J) Swings.
+You can see how the probabilities change depending on how you classify the Reject (J) Swings.
 
 ## Swing Data Verification
 Now that we have our swing distribution data, we need to verify the accuracy of this data via hypothesis testing.
