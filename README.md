@@ -54,4 +54,11 @@ We want to make sure the difference we see between which swings lead to what, is
 To evaluate the statistical significance of our results, we will use a hypothesis test called the chi-square test. This test compares the counts observed in the data we’ve collected to the counts we would expect if there is no relationship between the variables.
 
 ### Chi-Squared Hypothesis Testing
+The first thing we must do is establish our Null Hypothesis.
+
+**Null Hypohtesis: The relationship between swings and which swings lead to which, are totally independent.**
+
+Now that we have esbalished our null hypothesis, we can perform our Chi-Squared test to determine our p-value. If we receive a p-value of .05 or less, we can reject the null hypothesis with 95% confidence. 
+
+In other words, there is a stastiscal signifcance between which swings lead to which.
 
