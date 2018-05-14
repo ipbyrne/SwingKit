@@ -4,6 +4,7 @@
 Use the following moving standard indicator as a guide. I recommend to use the in built moving average 1st, then create the indicator from step 2 onwards to ensure the rest of the logic is correct.
 
 a-LWMA High line = High + Linear Weighted Moving Average + Period 8 + Shift 1
+
 b-LWMA Low line = Low + Linear Weighted Moving Average + Period 8 + Shift 1
  
 ### 2. Swing Line Logic
