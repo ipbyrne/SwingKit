@@ -1,5 +1,9 @@
 # SwingKit
+SwingKit is a custom indicator designed to outline the swings of the market and provide relevant frequency distribution statistics to find and locate trading oppurtunities that produce a positive expected value.
+
 ## Swing Construction
+Below are instructions on how the swings of the market are constructed within the indicator.
+
 ### 1. Initial Data Points
 Use the following moving standard indicator as a guide. I recommend to use the in built moving average 1st, then create the indicator from step 2 onwards to ensure the rest of the logic is correct.
 
