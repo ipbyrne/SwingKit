@@ -37,8 +37,10 @@ There are 3 types of swings in total
 The reject swings are few and far between so we can either combine them into our reject swings or our trend swings. I personally think it makes more sense to combine them into the trend swings because the previous swing is exceed and individual candle closing times are "sythentic".
 
 EURUSD 4HR Swing to Swing Distributions Counting Js at Ts:
+![alt text](https://github.com/ipbyrne/SwingKit/blob/master/JasT.PNG?raw=true "J Swings as T Swings")
 
 EURUSD 4HR Swing to Swing Distributions Counting Js at Rs:
+![alt text](https://github.com/ipbyrne/SwingKit/blob/master/JasR.PNG?raw=true "J Swings as R Swings")
 
 You can see how the probabilities slightly shift depending on how you classify the Reject (J) Swings.
 
