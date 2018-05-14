@@ -30,8 +30,14 @@ Mark and keep this turn point data point.
 
 ### 3. Swing Classification
 There are 3 types of swings in total
-1. Retrace Swings: Swings retrace does not exceed the previous swing.
-2. Trend Swings: Swings retrace does exceed the previous swing, and a candle closes beyond this point.
-3. Reject Swings: Swings retrace does exceed the previous swing and a candle does not close beyond this point.
+1. Retrace Swings (R): Swings retrace does not exceed the previous swing.
+2. Trend Swings (T): Swings retrace does exceed the previous swing, and a candle closes beyond this point.
+3. Reject Swings (J): Swings retrace does exceed the previous swing and a candle does not close beyond this point.
 
 The reject swings are few and far between so we can either combine them into our reject swings or our trend swings. I personally think it makes more sense to combine them into the trend swings because the previous swing is exceed and individual candle closing times are "sythentic".
+
+EURUSD 4HR Swing to Swing Distributions Counting Js at Ts:
+
+EURUSD 4HR Swing to Swing Distributions Counting Js at Rs:
+
+You can see how the probabilities slightly shift depending on how you classify the Reject (J) Swings.
