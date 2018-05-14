@@ -83,4 +83,4 @@ As previously stated, I personally think it makes more sense to clasiffy the Rej
 
 When accepting the premise that Reject Swings (J) should be classified as Trend Swings (T), we are able to reject the null hypothesis with more than 99% confidence.
 
-**As a result, the relationship between swings and which swings lead to which, are NOT independent.**
+**As a result, the relationship between swings and which swings lead to which, are NOT independent or random.**
