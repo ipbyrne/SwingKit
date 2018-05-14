@@ -48,3 +48,5 @@ You can see how the probabilities change depending on how you classify the Rejec
 
 ## Swing Data Verification
 Now that we have our swing distribution data, we need to verify the accuracy of this data via hypothesis testing.
+
+We want to make sure the difference we see between which swings lead to what, is not due to random chance. A hypothesis test can tell us if the difference we see in the percentages is statistically significant, and whether the swing type variables and prefances are independent or not.
