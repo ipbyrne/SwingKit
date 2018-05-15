@@ -121,7 +121,7 @@ When trading, the overall expected performance of your trades is the average sur
 
 You need to choose a multiple of this spread risk that will serve as your minimum entry level which will create a fixed edge. This way you can calculate the expected performance of your system overtime.
 
-The following simulates having a x% edge with a $10,000 account risking 2% per trade over 500 trades.
+The following simulates having a x% edge with a $10,000 account risking $200 per trade over 500 trades.
 
 ### 1% Edge
 
