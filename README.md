@@ -84,3 +84,36 @@ As previously stated, I personally think it makes more sense to clasiffy the Rej
 When accepting the premise that Reject Swings (J) should be classified as Trend Swings (T), we are able to reject the null hypothesis with more than 99% confidence.
 
 **As a result, the relationship between swings and which swings lead to which, are NOT independent or random.**
+
+## How to Trade Swings
+Think of our statistically verified swing data as a probability map that tells us where the market is most likely to go next at any given time. We can use this "map" to find zones in the market for each swing that will produce a positive expected value if we are able to enter within that zone while the current swing is still open.
+
+### Trade Example 1
+
+![alt text](https://github.com/ipbyrne/SwingKit/blob/master/TradeExample1.PNG?raw=true "Trade Example 1")
+
+Below are the frequency distributions for the following swings on the AUDUSD currency pair using a 4hr chart.
+- DR to UR: 32%
+- UR to DT: 62%
+
+The circled candle shows when the leg marked with a 1 was confirmed as a downward retrace swing. Once confirmed, there is a 32% chance the next swing will be an upward retrace swing. If the market does go on the form an upward retrace swing, there is a 62% chance the following swing will be a downward trend swing.
+
+Once the swing marked 1 is confirmed, we are looking to get short at any price above the break even entry line placed at the 32% retrace level. If get an entry below that level with the stop at the top of the leg marked 1 and take profit at the bottom, before leg 2 is confirmed, there is 32% chance that stop will not be hit by the time leg 2 completes. If/when this occurs, there is now a 62% chance leg 3 will continue on reach the take profit.
+
+As long as you entered above the 32% level before leg 2 closes or above the 62% level before leg 3 closes, that trade will have produced a positive expected value.
+
+### Trade Example 2
+
+![alt text](https://github.com/ipbyrne/SwingKit/blob/master/TradeExample2.PNG?raw=true "Trade Example 2")
+
+Below are the frequency distributions for the following swings on the GBPAUD currency pair using a 4hr chart.
+- UT to DR: 70%
+- DR to UT: 66%
+
+The circled candle shows when the leg marked with a 1 was confirmed as an upward trend swing. Once confirmed, there is a 70% chance the next swing will be an downward retrace swing. If the market does go on the form an downward retrace swing, there is a 66% chance the following swing will be an upward trend swing.
+
+Once the swing marked 1 is confirmed, we are looking to get long at any price below the break even entry line placed at the 66% retrace level. If get an entry below that level with the stop at the bottom of the leg marked 1 and take profit at the top, before leg 2 is confirmed, there is 70% chance that stop will not be hit by the time leg 2 completes. If/when this occurs, there is now a 66% chance leg 3 will continue on reach the take profit.
+
+As long as you entered below the 66% level before leg 2 or 3 closes, that trade will have produced a positive expected value. If you were to enter below to the 70% but above the 66% level before leg 2 closes, the trade would have produced a negative expected value even though the pattern played out as predicted.
+
+
