@@ -116,4 +116,30 @@ Once the swing marked 1 is confirmed, we are looking to get long at any price be
 
 As long as you entered below the 66% level before leg 2 or 3 closes, that trade will have produced a positive expected value. If you were to enter below to the 70% but above the 66% level before leg 2 closes, the trade would have produced a negative expected value even though the pattern played out as predicted.
 
+## Expected Performance
+When trading, the overall expected performance of your trades is the average surplus between your entry and the break even entry level for each setup, minus the spread risk in relation to the entire distance between your stop and target. For example if this distance is 100 pips and the spread is 2 pips, the spread risk is 2%. This means if your break even entry is 66%, you actually need to enter below 64% (if going long) in order to break even.
 
+You need to choose a multiple of this spread risk that will serve as your minimum entry level which will create a fixed edge. This way you can calculate the expected performance of your system overtime.
+
+The following simulates having a x% edge with a $10,000 account risking 2% per trade over 500 trades.
+
+### 1% Edge
+
+![alt text](https://github.com/ipbyrne/SwingKit/blob/master/1PE.PNG?raw=true "1% Edge")
+
+### 2% Edge
+
+![alt text](https://github.com/ipbyrne/SwingKit/blob/master/2PE.PNG?raw=true "2% Edge")
+
+### 3% Edge
+
+![alt text](https://github.com/ipbyrne/SwingKit/blob/master/3PE.PNG?raw=true "3% Edge")
+
+### 4% Edge
+
+![alt text](https://github.com/ipbyrne/SwingKit/blob/master/1PE.PNG?raw=true "4% Edge")
+
+### Conclusion
+We can see that anything less than a 1% edge will produce very rocky results, althought they will be positive over time, the equity swings will be very wild. Starting with a 2% edge we can see our equity curve will normalize and form a very clear trend. From the on, the positive trend increases as our edge does, as one would expect.
+
+As a result, one can conclude that having a minimum fixed 2% edge above the spread risk will produce a steady equity curve that will be easy to manage. Anything less will be psychologically hard to manage as the swings will be very large.
