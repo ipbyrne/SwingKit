@@ -137,7 +137,7 @@ The following simulates having a x% edge with a $10,000 account risking 2% per t
 
 ### 4% Edge
 
-![alt text](https://github.com/ipbyrne/SwingKit/blob/master/1PE.PNG?raw=true "4% Edge")
+![alt text](https://github.com/ipbyrne/SwingKit/blob/master/4PE.PNG?raw=true "4% Edge")
 
 ### Conclusion
 We can see that anything less than a 1% edge will produce very rocky results, althought they will be positive over time, the equity swings will be very wild. Starting with a 2% edge we can see our equity curve will normalize and form a very clear trend. From the on, the positive trend increases as our edge does, as one would expect.
