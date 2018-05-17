@@ -143,3 +143,9 @@ The following simulates having a x% edge with a $10,000 account risking $200 per
 We can see that anything less than a 1% edge will produce very rocky results, althought they will be positive over time, the equity swings will be very wild. Starting with a 2% edge we can see our equity curve will normalize and form a very clear trend. From the on, the positive trend increases as our edge does, as one would expect.
 
 As a result, one can conclude that having a minimum fixed 2% edge above the spread risk will produce a steady equity curve that will be easy to manage. Anything less will be psychologically hard to manage as the swings will be very large.
+
+## Further Swing Data Classification
+This section we further anaylze our frequency distribution data by factoring in the length of swings into our calssification of swings.
+
+### Length Classifiction
+Our swings will belong in the follow groups.
