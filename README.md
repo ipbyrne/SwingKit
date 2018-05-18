@@ -51,7 +51,7 @@ Now that we have our swing distribution data, we need to verify the accuracy of 
 
 We want to make sure the difference we see between which swings lead to what, is not due to random chance. A hypothesis test can tell us if the difference we see in the percentages is statistically significant, and whether the swing type variables and prefances are independent or not.
 
-To evaluate the statistical significance of our results, we will use a hypothesis test called the chi-square test. This test compares the counts observed in the data we’ve collected to the counts we would expect if there is no relationship between the variables.
+To evaluate the statistical significance of our results, we will use a hypothesis test called the chi-square goodness of fit test. This test is used to determine whether sample data is consistent with the hypothesized distribution.
 
 ### Chi-Squared Hypothesis Testing
 The first thing we must do is establish our Null Hypothesis.
