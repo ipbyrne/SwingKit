@@ -65,7 +65,6 @@ double UTpValue = 0;
 double DRpValue = 0;
 double DTpValue = 0;
 
-
 string objprefix = ObjPrefix + Symbol();
 
 //+------------------------------------------------------------------+
@@ -116,7 +115,7 @@ int OnCalculate(const int rates_total,
    int trendCheck = 0;
 
    // ---------
-   // Main Loop - Create Swings, Draw Swings, and Gather Basic Swing Data
+   // Main Loop - Create Swings, Draw Swings, and Populate Arrays
    // ---------
    while(i>-1)
      {
@@ -362,9 +361,26 @@ int OnCalculate(const int rates_total,
    
    
    // ---------
-   // Gather & Analyze Data 
+   // Call Helper Functions
    // ---------
-   i = swingSequnceCounter++;
+   SwingToSwingAnalysis(swingSequnceCounter);
+   DrawSwingDot(lastLeg);
+   SwingLengthAnalysis();
+   ChiSquaredTest();
+   DrawStats();
+   if(writeFile == true) {WriteFile();}
+   
+   return(rates_total);
+  }
+//+------------------------------------------------------------------+
+//|HELPER FUNCTIONS                                                  |
+//+------------------------------------------------------------------+
+//+----------------
+//| Swing to Swing Analysis                                        
+//+----------------
+void SwingToSwingAnalysis(int swingSequnceCounter)
+   {
+   int i = swingSequnceCounter++;
    int u = 0;
    while(i>1)
       {
@@ -382,8 +398,12 @@ int OnCalculate(const int rates_total,
       i--;
       u++;      
       }
-  
-   
+   }
+//+----------------
+//| Swing Length Analysis                                           
+//+----------------
+void DrawSwingDot(int lastLeg)
+   {
    // Draw Swing End Dot - Top MA/Bottom MA
    if(lastLeg == 1 && drawTriggerLine) // Current Swing is Down
       {
@@ -399,18 +419,8 @@ int OnCalculate(const int rates_total,
       double dot = iMA(NULL,0,MASpeed,0,MODE_LWMA,PRICE_LOW,0);
       ObjectCreate(dotName, OBJ_TEXT, 0, Time[0], dot); 
       ObjectSetText(dotName, CharToStr(159), 14, "Wingdings", Yellow);
-      }   
-   
-   SwingLengthAnalysis();
-   ChiSquaredTest();
-   DrawStats();
-   if(writeFile == true) {WriteFile();}
-   
-   return(rates_total);
-  }
-//+------------------------------------------------------------------+
-//|HELPER FUNCTIONS                                                  |
-//+------------------------------------------------------------------+ 
+      }  
+   }
 //+----------------
 //| Swing Length Analysis                                           
 //+----------------
