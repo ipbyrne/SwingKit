@@ -12,8 +12,9 @@ input bool drawMAs = true; // Draw MA Bands
 input bool drawSwings = true; // Draw Swings
 input bool drawPendingLevels = true; // Draw Potential Levels for Next Swing
 input bool drawTriggerLine = true; // Draw Trigger Line
-input bool drawSwingtoSwingData = true; // Draw Swing to Swing Data
 input bool drawSpreadRisk = true; // Draw Spread Risks
+input bool drawSwingtoSwingData = true; // Draw Swing to Swing Data
+input bool drawOppurtunityAnalysisData = true; // Draw Oppurtunity Analysis Data
 sinput string Info_3=""; //--------- C) COLOR OPTIONS  -----------------------------
 input color URcolor = Blue; // Color of UR legs
 input color UTcolor = Green; // Color of UT Legs
@@ -38,6 +39,7 @@ int swingLength[10000]; // Lengths of Each Swing in Cadnles
 int swingLengthClass[10000]; // 1 = D | 2 = C | 3 = B | 4 = A - Swings classified by Levels 1 shortest 4 longest
 int swingLengthDist[10000]; // Lengths of Each Swing Distributions
 int longestSwing = 0; // Length of Longest Swing
+int meanSwingLength = 0; // Mean Length of Swings
 // Time Counters/Checks/Levels
 int firstTimeLevel = 0; // First Time Cut Off
 int firstTimeLevelCheck = 0;
@@ -62,7 +64,6 @@ double URpValue = 0;
 double UTpValue = 0;
 double DRpValue = 0;
 double DTpValue = 0;
-
 
 
 string objprefix = ObjPrefix + Symbol();
@@ -400,6 +401,7 @@ int OnCalculate(const int rates_total,
       ObjectSetText(dotName, CharToStr(159), 14, "Wingdings", Yellow);
       }   
    
+   SwingLengthAnalysis();
    ChiSquaredTest();
    DrawStats();
    if(writeFile == true) {WriteFile();}
@@ -409,6 +411,34 @@ int OnCalculate(const int rates_total,
 //+------------------------------------------------------------------+
 //|HELPER FUNCTIONS                                                  |
 //+------------------------------------------------------------------+ 
+//+----------------
+//| Swing Length Analysis                                           
+//+----------------
+void SwingLengthAnalysis()
+   {
+   // Find Mean Swing Length
+   double sum = 0;
+   int x = 0;
+   while(x<=longestSwing)
+      {
+      sum+= swingLengthDist[x];
+      x++;
+      }
+   
+   x = 0;
+   double runningTotal = 0.0;
+   while(x<=longestSwing)
+      {
+      double probability;
+      probability = swingLengthDist[x]/sum;
+      runningTotal += probability;
+      if(runningTotal >= 0.50 && meanSwingLength == 0)
+         {
+         meanSwingLength = x;
+         }
+      x++;
+      }
+   }
 //+----------------
 //| Chi-Squared Tests                                            
 //+----------------
@@ -588,11 +618,16 @@ void DrawStats()
    ObjectSet(objprefix+IntegerToString(j),OBJPROP_CORNER,1);
    ObjectSet(objprefix+IntegerToString(j),OBJPROP_XDISTANCE,10);
    ObjectSet(objprefix+IntegerToString(j),OBJPROP_YDISTANCE,i);
-   i+=10;
+   i+=20;
    j++;  
    }
    
-
+   
+   double totalUpURSwings = URtoDR + URtoDT ;
+   double totalUpUTSwings = UTtoDR + UTtoDT;
+   
+   double totalDownDRSwings = DRtoUR + DRtoUT;
+   double totalDownDTSwings = DTtoUR + DTtoUT;
    if(drawSwingtoSwingData)
       {
       ObjectCreate(objprefix+IntegerToString(j),OBJ_LABEL,0,0,0);
@@ -619,11 +654,7 @@ void DrawStats()
       i+=10;
       j++;
       
-      double totalUpURSwings = URtoDR + URtoDT ;
-      double totalUpUTSwings = UTtoDR + UTtoDT;
       
-      double totalDownDRSwings = DRtoUR + DRtoUT;
-      double totalDownDTSwings = DTtoUR + DTtoUT;
       
       ObjectCreate(objprefix+IntegerToString(j),OBJ_LABEL,0,0,0);
       ObjectSetText(objprefix+IntegerToString(j),"UR to DR ("+ IntegerToString(URtoDR) + "): " + DoubleToStr((double(URtoDR)/totalUpURSwings)*100,2) + "%",7,"Verdana",TextColor);
@@ -715,6 +746,65 @@ void DrawStats()
       
       ObjectCreate(objprefix+IntegerToString(j),OBJ_LABEL,0,0,0);
       ObjectSetText(objprefix+IntegerToString(j),"DT Chi-Square P Value: " + DoubleToStr(DTpValue*100,2) + "%",7,"Verdana",TextColor);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_CORNER,1);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_XDISTANCE,10);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_YDISTANCE,i);
+      i+=20;
+      j++;
+      }
+  
+  if(drawOppurtunityAnalysisData)
+      {
+      ObjectCreate(objprefix+IntegerToString(j),OBJ_LABEL,0,0,0);
+      ObjectSetText(objprefix+IntegerToString(j),"---------------------------------------",7,"Verdana",TextColor);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_CORNER,1);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_XDISTANCE,10);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_YDISTANCE,i);
+      i+=10;
+      j++;
+      
+      ObjectCreate(objprefix+IntegerToString(j),OBJ_LABEL,0,0,0);
+      ObjectSetText(objprefix+IntegerToString(j),"Oppurtunity Analysis",7,"Verdana",TextColor);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_CORNER,1);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_XDISTANCE,10);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_YDISTANCE,i);
+      i+=10;
+      j++;
+      
+      ObjectCreate(objprefix+IntegerToString(j),OBJ_LABEL,0,0,0);
+      ObjectSetText(objprefix+IntegerToString(j),"---------------------------------------",7,"Verdana",TextColor);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_CORNER,1);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_XDISTANCE,10);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_YDISTANCE,i);
+      i+=10;
+      j++;
+      
+      ObjectCreate(objprefix+IntegerToString(j),OBJ_LABEL,0,0,0);
+      ObjectSetText(objprefix+IntegerToString(j),"Mean Swing Length: " + IntegerToString(meanSwingLength),7,"Verdana",TextColor);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_CORNER,1);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_XDISTANCE,10);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_YDISTANCE,i);
+      i+=10;
+      j++;
+      
+      ObjectCreate(objprefix+IntegerToString(j),OBJ_LABEL,0,0,0);
+      ObjectSetText(objprefix+IntegerToString(j),"Oppurtunities Per Week: " + DoubleToStr((120/(double(meanSwingLength*4))),0),7,"Verdana",TextColor);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_CORNER,1);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_XDISTANCE,10);
+      ObjectSet(objprefix+IntegerToString(j),OBJPROP_YDISTANCE,i);
+      i+=10;
+      j++;
+      
+      
+      double risk = 55;
+      double reward = 45;
+      double winrate = (((double(URtoDT)/totalUpURSwings)) + ((double(DRtoUT)/totalDownDRSwings)))/2;
+      double expectedValue = (reward*winrate) - (risk*(1-winrate));
+      double evAsPofRisk = (expectedValue/risk);
+      double spreadRisk = ((MarketInfo(Symbol(),MODE_SPREAD)/10)/75)*100;
+      
+      ObjectCreate(objprefix+IntegerToString(j),OBJ_LABEL,0,0,0);
+      ObjectSetText(objprefix+IntegerToString(j),"R to T Min EV (No Spread Risk): " + DoubleToStr((evAsPofRisk*100),0) + "%",7,"Verdana",TextColor);
       ObjectSet(objprefix+IntegerToString(j),OBJPROP_CORNER,1);
       ObjectSet(objprefix+IntegerToString(j),OBJPROP_XDISTANCE,10);
       ObjectSet(objprefix+IntegerToString(j),OBJPROP_YDISTANCE,i);
