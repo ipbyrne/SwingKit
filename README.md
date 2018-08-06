@@ -121,24 +121,6 @@ When trading, the overall expected performance of your trades is the average sur
 
 You need to choose a multiple of this spread risk that will serve as your minimum entry level which will create a fixed edge. This way you can calculate the expected performance of your system overtime.
 
-The following simulates having a x% edge with a $10,000 account risking $200 per trade over 500 trades.
-
-### 1% Edge
-
-![alt text](https://github.com/ipbyrne/SwingKit/blob/master/1PE.PNG?raw=true "1% Edge")
-
-### 2% Edge
-
-![alt text](https://github.com/ipbyrne/SwingKit/blob/master/2PE.PNG?raw=true "2% Edge")
-
-### 3% Edge
-
-![alt text](https://github.com/ipbyrne/SwingKit/blob/master/3PE.PNG?raw=true "3% Edge")
-
-### 4% Edge
-
-![alt text](https://github.com/ipbyrne/SwingKit/blob/master/4PE.PNG?raw=true "4% Edge")
-
 ### Conclusion
 We can see that anything less than a 1% edge will produce very rocky results, althought they will be positive over time, the equity swings will be very wild. Starting with a 2% edge we can see our equity curve will normalize and form a very clear trend. From the on, the positive trend increases as our edge does, as one would expect.
 
